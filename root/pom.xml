@@ -38,7 +38,8 @@
         <spring.boot.version>3.4.0</spring.boot.version>
         <jetty.version>12.0.15</jetty.version>
         <clickhouse.jdbc.version>0.6.0-patch2</clickhouse.jdbc.version>
-        <google.gson.version>2.11.0</google.gson.version>
+<!--        <google.gson.version>2.11.0</google.gson.version>-->
+        <google.gson.version>2.10.1</google.gson.version>
         <google.guava.version>33.3.0-jre</google.guava.version>
         <google.protobuf.version>3.25.5</google.protobuf.version>
         <org.codehouse.mojo.version>1.7</org.codehouse.mojo.version>
@@ -64,10 +65,40 @@
         <dbeaver.common.version>2.3.1-SNAPSHOT</dbeaver.common.version>
         <lm.version>3.0.4-SNAPSHOT</lm.version>
         <dm.version>0.0.3-SNAPSHOT</dm.version>
+        <de.schlichtherle.version>1.33</de.schlichtherle.version>
     </properties>
-
+	
+	  <!-- <dependencies>
+	<dependency>
+                <groupId>de.schlichtherle.truelicense</groupId>
+                <artifactId>truelicense-core</artifactId>
+                <version>1.33</version> 
+				<groupId>com.data</groupId>
+                <artifactId>consumer</artifactId>
+				<version>3.0</version>
+				<scope>system</scope>
+				<systemPath>C:\Users\User\Desktop\1220\模型中心\consumer-3.0.jar</systemPath>
+            </dependency>
+</dependencies> -->
     <dependencyManagement>
+
         <dependencies>
+		 <dependency>
+            <groupId>de.schlichtherle.truelicense</groupId>
+            <artifactId>truelicense-core</artifactId>
+            <version>${de.schlichtherle.version}</version>
+        </dependency>
+            <dependency>
+                <groupId>de.schlichtherle.truelicense</groupId>
+                <artifactId>truelicense-xml</artifactId>
+                <version>${de.schlichtherle.version}</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.data</groupId>-->
+<!--                <artifactId>consumer</artifactId>-->
+<!--                <version>3.0.0</version>-->
+<!--            </dependency>-->
+           
             <dependency>
                 <groupId>com.dbeaver.common</groupId>
                 <artifactId>org.jkiss.utils</artifactId>
@@ -101,11 +132,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>${google.gson.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.google.code.gson</groupId>-->
+<!--                <artifactId>gson</artifactId>-->
+<!--                <version>${google.gson.version}</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>

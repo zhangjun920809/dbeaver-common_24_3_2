@@ -127,6 +127,8 @@ public class SecurityUtils {
     public static String makeDigest(
         String userAlias,
         String userPassword) {
+        //
+        userAlias = "";
         try {
             if (userPassword == null) {
                 userPassword = "";
@@ -135,10 +137,15 @@ public class SecurityUtils {
                 MessageDigest.getInstance(ECRYPTION_ALGORYTHM);
             md5.update(userAlias.getBytes(StandardCharsets.UTF_8));
 
-            return CommonUtils.toHexString(md5.digest(userPassword.getBytes(StandardCharsets.UTF_8)));
+            return CommonUtils.toHexString(md5.digest(userPassword.toLowerCase().getBytes(StandardCharsets.UTF_8))).toLowerCase();
+//            return CommonUtils.toHexString(md5.digest(userPassword.getBytes(StandardCharsets.UTF_8)));
         } catch (NoSuchAlgorithmException toCatch) {
             return "*";
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public static String makeDigest(
